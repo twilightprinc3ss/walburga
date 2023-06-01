@@ -1,0 +1,25 @@
+import json
+import os
+
+# Usage: python generate_json_no_traits.py
+# You can edit the values below
+
+cid_hash_image = "bafkreihu2wjkiokwyfyg2ukthzwvugxtyhhzmi75p6kfb4mbxzvfa5xc7y" 
+output_folder = "output"
+image_filename = "walburga.png"  # include this if needed
+supply = 1
+
+if not os.path.exists(output_folder):
+  os.makedirs(output_folder)
+  print(f'Created folder: "{output_folder}"')
+
+for x in range(1, supply + 1):
+  dictionary = {
+    "name": "WALLY#" + str(x),
+    "description": "Linocut block print on rice paper. A wise, red and black cow with her unusual insides on display. Created with love in Dayton, OH 2018. ",
+    "external_url": "https://www.scatter.art/walburga?tab=market",
+    "image": "ipfs://bafkreihu2wjkiokwyfyg2ukthzwvugxtyhhzmi75p6kfb4mbxzvfa5xc7y" + bafkreihu2wjkiokwyfyg2ukthzwvugxtyhhzmi75p6kfb4mbxzvfa5xc7y + "/" + str(x) + walburga.png,
+  }
+
+  with open("./" + output_folder + "/" + str(x), "w") as outfile:
+    json.dump(dictionary, outfile, indent=4)
